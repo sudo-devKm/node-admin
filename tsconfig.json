@@ -1,0 +1,40 @@
+{
+	"$schema": "https://www.schemastore.org/tsconfig",
+	"compileOnSave": true,
+	"ts-node": {
+		"require": ["tsconfig-paths/register"],
+		"transpileOnly": true
+	},
+	"compilerOptions": {
+		"rootDir": "./src",
+		"outDir": "./dist",
+		"module": "commonjs",
+		"target": "es2022",
+		"types": ["node"],
+		"typeRoots": ["./src/@types", "./node_modules/@types"],
+		"sourceMap": true,
+		"declaration": true,
+		"declarationMap": true,
+		"noUncheckedIndexedAccess": true,
+		"exactOptionalPropertyTypes": true,
+		"strict": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"esModuleInterop": true,
+		"noUncheckedSideEffectImports": true,
+		"moduleDetection": "force",
+		"skipLibCheck": true,
+		"paths": {
+			"@app/*": ["./src/*"],
+			"@libs/*": ["./src/libs/*"],
+			"@config/*": ["./src/config/*"],
+			"@modules/*": ["./src/modules/*"],
+			"@database/*": ["./src/database/*"],
+			"@entities/*": ["./src/entities/*"],
+			"@middlewares/*": ["./src/middlewares/*"],
+			"@exceptions/*": ["./src/exceptions/*"]
+		}
+	},
+	"include": ["src/**/*"],
+	"exclude": ["node_modules", "dist", ".git"]
+}

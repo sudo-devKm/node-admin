@@ -1,0 +1,17 @@
+# packages
+node_modules/
+
+# build
+dist/
+build/
+
+# secrets
+.env
+.env.*
+!.env.example
+
+# code editor
+.idea
+
+# logs
+logs/
