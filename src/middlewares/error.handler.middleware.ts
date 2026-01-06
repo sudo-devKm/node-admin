@@ -6,7 +6,7 @@ import { HttpException } from "@app/exceptions/http.exception";
 import { NextFunction, Request, Response } from "express";
 
 // Helper to create a unified error response object
-function createErrorResponse(error: any): ErrorResponse {
+const createErrorResponse = (error: any): ErrorResponse => {
     // Hide stack trace in production
     return {
         success: error?.success ?? false,

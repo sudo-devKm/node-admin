@@ -1,7 +1,6 @@
 import { Response, Router } from "express";
 import { ZodObject, core } from "zod";
-import { DeepPartial, FindOneOptions, FindOptionsWhere, ObjectLiteral, Repository } from "typeorm";
-import { QueryDeepPartialEntity } from "typeorm/browser";
+import { DeepPartial, FindOneOptions, FindOptionsWhere, ObjectLiteral, Repository, QueryDeepPartialEntity } from "typeorm";
 
 export interface AppRoute {
     readonly router: Router
@@ -37,6 +36,12 @@ export type SendResponseOptions = {
     data?: Record<string, any> | null | undefined;
     message?: string;
     success?: boolean;
+};
+
+export type UploadOptions = {
+    folder: string;
+    maxSize?: number;
+    allowedMimeTypes?: string[];
 }
 
 export type FindAllOptions<Entity extends ObjectLiteral> = string | string[] | number | number[] | Date | Date[] | FindOptionsWhere<Entity> | FindOptionsWhere<Entity>[]

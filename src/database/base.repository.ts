@@ -6,23 +6,23 @@ export const getEntityRepository = <T extends ObjectLiteral>(entity: EntityTarge
     return AppDataSource.getRepository(entity);
 };
 
-export const createEntity = <T extends ObjectLiteral>(options: CreateEntityOptions<T>) => {
+export const createEntity = async <T extends ObjectLiteral>(options: CreateEntityOptions<T>) => {
     const { createInput, repository } = options;
     const entity = repository.create(createInput);
     return repository.save(entity);
 };
 
-export const getEntity = <T extends ObjectLiteral>(options: FindOneEntityOptions<T>) => {
+export const getEntity = async <T extends ObjectLiteral>(options: FindOneEntityOptions<T>) => {
     const { findOptions, repository } = options;
     return repository.findOne(findOptions);
 };
 
-export const updateEntityById = <T extends ObjectLiteral>(options: UpdateEntityOptions<T>) => {
+export const updateEntityById = async <T extends ObjectLiteral>(options: UpdateEntityOptions<T>) => {
     const { updateInput, entityId, repository } = options;
     return repository.update(entityId, updateInput);
 };
 
-export const updateManyUsers = <T extends ObjectLiteral>(options: UpdateAllEntityOptions<T>) => {
+export const updateManyUsers = async <T extends ObjectLiteral>(options: UpdateAllEntityOptions<T>) => {
     const { findOptions, repository, updateInput } = options;
     return repository.update(findOptions, updateInput);
 };

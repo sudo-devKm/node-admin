@@ -9,5 +9,9 @@ export const envs = cleanEnv(process.env, {
     DB_USERNAME: str(),
     DB_PASSWORD: str(),
     DB_PORT: num(),
-    DB_NAME: str()
+    DB_NAME: str(),
+    AWS_ACCESS_KEY_ID: str(),
+    AWS_SECRET_ACCESS_KEY: str(),
+    AWS_REGION: str(),
+    S3_BUCKET: str()
 });
